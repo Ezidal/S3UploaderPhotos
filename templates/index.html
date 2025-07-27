@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Загрузка фото</title>
+</head>
+<body>
+  <h1>Загрузите фото</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept="image/*" required>
+    <button type="submit">Загрузить</button>
+  </form>
+
+  {{ if .url }}
+    <p>Файл успешно загружен: <a href="{{ .url }}" target="_blank">{{ .url }}</a></p>
+    <img src="{{ .url }}" alt="Uploaded Image" style="max-width: 300px;">
+  {{ end }}
+</body>
+</html>
